@@ -1,5 +1,6 @@
-import React from "react";
+import { React, useState } from "react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -13,16 +14,19 @@ import {
   Input,
   Stack,
   Text,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <Container
       maxW="lg"
       py={{ base: "12", md: "24" }}
       px={{ base: "0", sm: "8" }}
-      bg="#905BE8"
+      bg="#7B70F6"
       mt="40px"
       borderRadius="2xl"
     >
@@ -64,13 +68,19 @@ const Login = () => {
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="password">Password</FormLabel>
-                <Input
-                  id="password"
-                  name="password"
-                  type={"password"}
-                  autoComplete="current-password"
-                  required
-                />
+                <InputGroup>
+                  <Input type={showPassword ? "text" : "password"} />
+                  <InputRightElement h={"full"}>
+                    <Button
+                      variant={"ghost"}
+                      onClick={() =>
+                        setShowPassword((showPassword) => !showPassword)
+                      }
+                    >
+                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
               </FormControl>
             </Stack>
             <HStack justify="space-between">
