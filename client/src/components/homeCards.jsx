@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const HomePage = () => {
+const HomeCards = () => {
   return (
     <Box m="5px" p="5px" mx="250px">
       <Box mt="80px" mb="50px">
@@ -393,4 +393,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomeCards;
