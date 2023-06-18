@@ -8,10 +8,11 @@ import {
   HStack,
   Button,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <Box >
+    <Box>
       <Flex
         as="navbar"
         bg="#7B70F6"
@@ -21,7 +22,7 @@ const Navbar = () => {
         alignItems="center"
         wrap="wrap"
         boxShadow="md"
-        borderRadius='20px'
+        borderRadius="20px"
       >
         <Heading as="h2" pl="50px">
           TaskWarriors
@@ -29,30 +30,36 @@ const Navbar = () => {
         <Spacer />
         <HStack spacing="50px" pr="50px">
           <ButtonGroup variant="text" colorScheme="gray" spacing="8">
-            {["Home", "Services", "Warriors", "Support"].map((item) => (
+            <Link to="/">
               <Button
                 _hover={{
                   background: "#905BE8",
                   color: "black",
                 }}
-                key={item}
+                key="Home"
               >
-                {item}
+                Home
               </Button>
+            </Link>
+            {["Services", "Warriors", "Login"].map((item) => (
+              <Link to={item}>
+                <Button
+                  _hover={{
+                    background: "#905BE8",
+                    color: "black",
+                  }}
+                  key={item}
+                >
+                  {item}
+                </Button>
+              </Link>
             ))}
           </ButtonGroup>
-          <Button
-            _hover={{
-              background: "#905BE8",
-              color: "black",
-            }}
-            variant="tertiary"
-          >
-            Login
-          </Button>
-          <Button color="black" colorScheme="purple">
-            Sign Up
-          </Button>
+          <Link to="/WarriorRegister">
+            <Button color="black" colorScheme="purple">
+              Become a Warrior
+            </Button>
+          </Link>
         </HStack>
       </Flex>
     </Box>
