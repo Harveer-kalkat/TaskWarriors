@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -27,7 +28,13 @@ const Login = () => {
     >
       <Stack spacing="8">
         <Stack spacing="6">
-          <Heading as="h2">TaskWarriors</Heading>
+          <HStack spacing="85" mt="-30">
+            <Link to="/">
+              <ArrowBackIcon boxSize={6} mt="0" alignItems="flex-start" />
+            </Link>
+            <Heading as="h2">TaskWarriors</Heading>
+          </HStack>
+
           <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
             <Heading size={{ base: "xs", md: "sm" }}>
               Log in to your account
@@ -73,12 +80,23 @@ const Login = () => {
               </Button>
             </HStack>
             <Stack spacing="6">
-              <Button variant="primary">Sign in</Button>
+              <Button
+                variant="primary"
+                bg="#905BE8"
+                _hover={{
+                  background: "purple",
+                  color: "black",
+                }}
+              >
+                Sign in
+              </Button>
               <HStack>
                 <Divider />
-                <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
-                  or continue with
-                </Text>
+                <Text
+                  textStyle="sm"
+                  whiteSpace="nowrap"
+                  color="fg.muted"
+                ></Text>
                 <Divider />
               </HStack>
             </Stack>
