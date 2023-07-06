@@ -9,8 +9,16 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Navbar = () => {
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+
+  const handleClick = () => {
+    logout();
+  };
   return (
     <Box>
       <Flex
@@ -41,8 +49,8 @@ const Navbar = () => {
                 Home
               </Button>
             </Link>
-            {["Services", "Warriors", "Login"].map((item) => (
-              <Link to={item}>
+            {["Services", "Warriors"].map((item) => (
+              <Link to={`/${item}`}>
                 <Button
                   _hover={{
                     background: "#905BE8",
@@ -54,8 +62,35 @@ const Navbar = () => {
                 </Button>
               </Link>
             ))}
+            {user && (
+              <Box>
+                <Button
+                  _hover={{
+                    background: "#905BE8",
+                    color: "black",
+                  }}
+                  key="Logout"
+                  onClick={handleClick}
+                >
+                  Logout
+                </Button>
+              </Box>
+            )}
+            {!user && (
+              <Link to="/Login">
+                <Button
+                  _hover={{
+                    background: "#905BE8",
+                    color: "black",
+                  }}
+                  key="Login"
+                >
+                  Login
+                </Button>
+              </Link>
+            )}
           </ButtonGroup>
-          <Link to="/WarriorRegister">
+          <Link to="/SignUp">
             <Button color="black" colorScheme="purple">
               Become a Warrior
             </Button>

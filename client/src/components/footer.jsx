@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <Box bg="#7B70F6" as="footer" role="contentinfo" px="90px">
+    <Box bg="#7B70F6" as="footer" role="contentinfo" px="90px" bottom="0">
       <Stack spacing={{ base: "4", md: "5" }}>
         <Stack justify="space-between" direction="row" align="center">
           <Text as="p">TaskWarriors</Text>
