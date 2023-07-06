@@ -34,7 +34,14 @@ const userSchema = new Schema({
 });
 
 //static login method
-userSchema.statics.login = async function (email, password) {
+userSchema.statics.login = async function (
+  firstName,
+  lastName,
+  email,
+  password,
+  phoneNumber,
+  field
+) {
   if (!email || !password) {
     throw Error("All fields must be filled");
   }
@@ -59,18 +66,10 @@ userSchema.statics.signup = async function (
   lastName,
   email,
   password,
-  phoneNumber,
-  field
+  phoneNumber
 ) {
   //validation
-  if (
-    !firstName ||
-    !lastName ||
-    !email ||
-    !password ||
-    !phoneNumber ||
-    !field
-  ) {
+  if (!firstName || !lastName || !email || !password || !phoneNumber) {
     throw Error("All fields must be filled");
   }
 
@@ -97,7 +96,6 @@ userSchema.statics.signup = async function (
     email,
     password: hash,
     phoneNumber,
-    field,
   });
 
   return user;

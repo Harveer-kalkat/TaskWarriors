@@ -2,7 +2,6 @@ import React from "react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
   Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
@@ -12,6 +11,7 @@ import {
   Image,
   HStack,
   Box,
+  Select,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 const Register = () => {
@@ -20,7 +20,7 @@ const Register = () => {
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={4} w={"full"} maxW={"md"}>
           <HStack spacing="120" pb="30px">
-            <Link to="/Login">
+            <Link to="/">
               <ArrowBackIcon boxSize={6} mt="0" alignItems="flex-start" />
             </Link>
             <Heading as="h2">Register</Heading>
@@ -53,7 +53,7 @@ const Register = () => {
             <FormLabel>Phone Number</FormLabel>
             <Input type="phone" />
           </FormControl>
-          <FormControl id="image" isRequired>
+          {/* <FormControl id="image" isRequired>
             <FormLabel for="photo">Upload your student ID!</FormLabel>
             <Input
               type="file"
@@ -62,16 +62,18 @@ const Register = () => {
               accept="image/*"
               border="0"
             />
+          </FormControl> */}
+          <FormControl id="field" isRequired>
+            <FormLabel>Field</FormLabel>
+            <Select placeholder="Select option">
+              <option value="Programming and development">
+                Programming and development
+              </option>
+              <option value="Electronics">Electronics</option>
+              <option value="Hair and Beauty">Hair and Beauty</option>
+            </Select>
           </FormControl>
           <Stack spacing={6}>
-            <Stack
-              direction={{ base: "column", sm: "row" }}
-              align={"start"}
-              justify={"space-between"}
-            >
-              <Checkbox>Remember me</Checkbox>
-              <Link color={"blue.500"}>Forgot password?</Link>
-            </Stack>
             <Button colorScheme={"blue"} variant={"solid"}>
               Sign in
             </Button>
