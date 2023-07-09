@@ -13,6 +13,7 @@ import Warriors from "./pages/Warriors";
 import SignUp from "./components/auth/SignUp";
 import ServiceDetails from "./pages/ServiceDetails";
 import WarriorSelection from "./pages/WarriorSelection";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   document.body.style = "background: #5A68B0";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/ServiceDetails" element={<ServiceDetails />} />
         <Route path="/WarriorSelection" element={<WarriorSelection />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
       </Route>
     )
   );
