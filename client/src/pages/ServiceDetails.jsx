@@ -5,68 +5,55 @@ import Footer from "../components/footer";
 import { Link } from "react-router-dom";
 
 const ServiceDetails = () => {
+  const ServiceDetails = [
+    {
+      title: "Service Title",
+      price: "Service Price",
+      description: "Description",
+      content: "Content",
+    },
+    {
+      title: "Service Title",
+      price: "Service Price",
+      description: "Description",
+      content: "Content",
+    },
+    {
+      title: "Service Title",
+      price: "Service Price",
+      description: "Description",
+      content: "Content",
+    },
+  ];
   return (
     <div>
       <div className="navbar">
         <Navbar />
       </div>
       <Box>
-        <div className="services">
-          <div className="details">
-            <div className="big-img">
-              <img src="" alt="" />
-            </div>
-
-            <div className="box">
-              <div className="row">
-                <h2>Service Title</h2>
-                <span>$Service Price</span>
+        {ServiceDetails.map((detail) => (
+          <Box className="services" bg="#7B70F6" rounded={"lg"}>
+            <div className="details">
+              <div className="big-img">
+                <img src="" alt="" />
               </div>
 
-              <p>Description</p>
-              <p>content</p>
-              <Link to="/WarriorSelection">
-                <button className="cart">Book</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="services">
-          <div className="details">
-            <div className="big-img">
-              <img src="" alt="" />
-            </div>
+              <div className="box">
+                <div className="row">
+                  <h2>{detail.title}</h2>
+                  <span>${detail.price}</span>
+                </div>
 
-            <div className="box">
-              <div className="row">
-                <h2>Service Title</h2>
-                <span>$Service Price</span>
+                <p>{detail.description}</p>
+                <p>{detail.content}</p>
+                <Link to="/WarriorSelection">
+                  <button className="cart">Book</button>
+                </Link>
               </div>
-
-              <p>Description</p>
-              <p>content</p>
-              <button className="cart">Book</button>
             </div>
-          </div>
-        </div>
-        <div className="services">
-          <div className="details">
-            <div className="big-img">
-              <img src="" alt="" />
-            </div>
+          </Box>
+        ))}
 
-            <div className="box">
-              <div className="row">
-                <h2>Service Title</h2>
-                <span>$Service Price</span>
-              </div>
-
-              <p>Description</p>
-              <p>content</p>
-              <button className="cart">Book</button>
-            </div>
-          </div>
-        </div>
         <Footer />
       </Box>
     </div>

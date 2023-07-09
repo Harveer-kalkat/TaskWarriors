@@ -74,27 +74,34 @@ const Navbar = () => {
                 >
                   Logout
                 </Button>
+                <Link to="/Dashboard">
+                  <Button color="black" bg={"purple.600"}>
+                    Dashboard
+                  </Button>
+                </Link>
               </Box>
             )}
             {!user && (
-              <Link to="/Login">
-                <Button
-                  _hover={{
-                    background: "#905BE8",
-                    color: "black",
-                  }}
-                  key="Login"
-                >
-                  Login
-                </Button>
-              </Link>
+              <HStack>
+                <Link to="/Login">
+                  <Button
+                    _hover={{
+                      background: "#905BE8",
+                      color: "black",
+                    }}
+                    key="Login"
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/SignUp">
+                  <Button color="black" bg={"purple.600"}>
+                    Become a Warrior
+                  </Button>
+                </Link>
+              </HStack>
             )}
           </ButtonGroup>
-          <Link to="/SignUp">
-            <Button color="black" colorScheme="purple">
-              Become a Warrior
-            </Button>
-          </Link>
         </HStack>
       </Flex>
     </Box>
