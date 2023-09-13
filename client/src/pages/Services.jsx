@@ -9,15 +9,33 @@ const Services = () => {
     {
       name: "Programming and Development",
       image: require("../images/programming.jpg"),
+      field: "Programming_and_Development",
     },
-    { name: "Electronics", image: require("../images/electronics.jpg") },
+    {
+      name: "Electronics",
+      image: require("../images/electronics.jpg"),
+      field: "Electronics",
+    },
     {
       name: "Project Management",
       image: require("../images/project-manager.png"),
+      field: "Project_Management",
     },
-    { name: "HealthCare", image: require("../images/healthcare.png") },
-    { name: "Assembling", image: require("../images/assembling.jpg") },
-    { name: "Hair and Beauty", image: require("../images/hairandbeauty.png") },
+    {
+      name: "HealthCare",
+      image: require("../images/healthcare.png"),
+      field: "HealthCare",
+    },
+    {
+      name: "Assembling",
+      image: require("../images/assembling.jpg"),
+      field: "Assembling",
+    },
+    {
+      name: "Hair and Beauty",
+      image: require("../images/hairandbeauty.png"),
+      field: "Hair_and_Beauty",
+    },
   ];
   return (
     <div>
@@ -40,7 +58,7 @@ const Services = () => {
         <Box px="200px" py="100px">
           <SimpleGrid columns={3} spacing={20}>
             {services.map((service) => (
-              <Link to={"/ServiceDetails"}>
+              <Link to={`/ServiceDetails/${service.field}`}>
                 <Box bg="white" height="200px" rounded={"lg"}>
                   <Image
                     fit="contain"

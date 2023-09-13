@@ -9,11 +9,13 @@ import HomePage from "./pages/HomePage";
 import Login from "./components/auth/Login";
 import Services from "./pages/Services";
 import Warriors from "./pages/Warriors";
-// import Register from "./components/auth/Register";
 import SignUp from "./components/auth/SignUp";
 import ServiceDetails from "./pages/ServiceDetails";
 import WarriorSelection from "./pages/WarriorSelection";
 import Dashboard from "./pages/Dashboard";
+import CreateListings from "./pages/CreateListings";
+import Register from "./components/auth/Register";
+import Chat from "./pages/Chat";
 
 function App() {
   document.body.style = "background: #5A68B0";
@@ -23,13 +25,14 @@ function App() {
       <Route>
         <Route path="/" element={<HomePage />} />
         <Route path="/Services" element={<Services />} />
-        <Route path="/Warriors" element={<Warriors />} />
+        <Route path="/Chat" element={<Chat />} />
         <Route path="/Login" element={<Login />} />
-        {/* <Route path="/SignUp" element={<SignUp />} /> */}
+        <Route path="/Register" element={<Register />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/ServiceDetails" element={<ServiceDetails />} />
-        <Route path="/WarriorSelection" element={<WarriorSelection />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/ServiceDetails/:id" element={<ServiceDetails />} />
+        <Route path="/WarriorSelection/:id" element={<WarriorSelection />} />
+        <Route path="/Dashboard/:id" element={<Dashboard />} />
+        <Route path="/CreateListings" element={<CreateListings />} />
       </Route>
     )
   );

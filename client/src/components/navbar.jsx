@@ -49,19 +49,30 @@ const Navbar = () => {
                 Home
               </Button>
             </Link>
-            {["Services", "Warriors"].map((item) => (
-              <Link to={`/${item}`}>
+            <Link to="/Services">
+              <Button
+                _hover={{
+                  background: "#905BE8",
+                  color: "black",
+                }}
+                key="Services"
+              >
+                Services
+              </Button>
+            </Link>
+            {user && (
+              <Link to={`/Chat`}>
                 <Button
                   _hover={{
                     background: "#905BE8",
                     color: "black",
                   }}
-                  key={item}
+                  key="Chat"
                 >
-                  {item}
+                  Chat
                 </Button>
               </Link>
-            ))}
+            )}
             {user && (
               <Box>
                 <Button
@@ -74,7 +85,7 @@ const Navbar = () => {
                 >
                   Logout
                 </Button>
-                <Link to="/Dashboard">
+                <Link to={`/Dashboard/${user.email}`}>
                   <Button color="black" bg={"purple.600"}>
                     Dashboard
                   </Button>
