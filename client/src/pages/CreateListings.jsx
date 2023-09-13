@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
   Button,
@@ -19,8 +19,6 @@ import { Form, Link, useNavigate } from "react-router-dom";
 import { useListingsContext } from "../hooks/useListingContext";
 
 const CreateListings = () => {
-  const { dispatch } = useListingsContext();
-
   const [profilePic, setProfilePic] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
