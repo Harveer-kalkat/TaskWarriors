@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import { Container, Flex, HStack, Image } from "@chakra-ui/react";
+import { Container, Flex, HStack, Image, Text, Button } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 
 const WarriorSelection = () => {
+  const { id } = useParams();
   const [warriors, setWarriors] = useState([]);
   useEffect(() => {
     async function getRecords() {
       const response = await fetch(
-        "http://localhost:4000/api/user/WarriorSelection"
+        `http://localhost:4000/api/listing/WarriorSelection/${id}`
       );
 
       if (!response.ok) {
@@ -24,7 +26,7 @@ const WarriorSelection = () => {
     getRecords();
 
     return;
-  }, [warriors.length]);
+  }, [warriors.length, id]);
   return (
     <div>
       <div className="navbar">
@@ -34,28 +36,44 @@ const WarriorSelection = () => {
       {warriors.map((warrior) => {
         return (
           <Container my="100px">
-            <div class="card" style={{ width: 740 }}>
-              <div class="row">
-                <div class="img">
+            <div className="card" style={{ width: 740, bg: "#7B70F6" }}>
+              <div className="row">
+                <div className="img">
                   <Image
-                    src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
-                    class="card-img"
+                    src={`/images/${warrior.profilePicName}`}
+                    className="card-img"
                     alt="..."
                   />
                 </div>
-                <div class="text">
-                  <div class="card-body">
+                <div className="text">
+                  <div className="card-body" bg="#7B70F6">
                     <Flex px="60px" py="30px">
                       <HStack spacing="180px">
-                        <h5 class="card-title">
+                        <Text
+                          className="card-title"
+                          fontWeight="bold"
+                          fontSize="30px"
+                        >
                           {warrior.firstName + " " + warrior.lastName}
-                        </h5>
+                        </Text>
 
-                        <p class="card-text">Price</p>
+                        <Text as="p" className="card-text" color="red.200">
+                          ${warrior.price}/hr
+                        </Text>
                       </HStack>
                     </Flex>
-                    <p class="card-text">Description</p>
-                    <p class="card-text">{warrior.email}</p>
+                    <Text className="card-text">{warrior.description}</Text>
+                    <Text
+                      className="card-text"
+                      fontSize="20px"
+                      color="gray.100"
+                      mt="10px"
+                    >
+                      {warrior.email}
+                    </Text>
+                    <Button className="cart" mt="40px">
+                      Payment
+                    </Button>
                   </div>
                 </div>
               </div>

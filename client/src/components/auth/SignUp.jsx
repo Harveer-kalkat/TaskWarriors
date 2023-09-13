@@ -23,6 +23,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [profilePic, setProfilePic] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [field, setField] = useState("");
@@ -38,7 +39,18 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup(firstName, lastName, email, password, phoneNumber, field);
+
+    const formData = new FormData();
+    formData.append("profilePic", profilePic);
+    formData.append("profilePicName", profilePic.name);
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("phoneNumber", phoneNumber);
+    formData.append("field", field);
+    formData.append("role", "Warrior");
+    await signup(formData);
   };
 
   return (
@@ -51,7 +63,24 @@ const SignUp = () => {
             </Link>
             <Heading as="h2">Register</Heading>
           </HStack>
-          <Form onSubmit={handleSubmit}>
+          <Form
+            action="/SignUp"
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
+          >
+            <Box>
+              <FormControl id="profilePic" isRequired>
+                <FormLabel for="profilePic">Profile Pic</FormLabel>
+                <Input
+                  type="file"
+                  id="profilePic"
+                  name="profilePic"
+                  accept="image/*"
+                  border="0"
+                  onChange={(e) => setProfilePic(e.target.files[0])}
+                />
+              </FormControl>
+            </Box>
             <HStack>
               <Box>
                 <FormControl id="firstName" isRequired>
@@ -108,7 +137,7 @@ const SignUp = () => {
                 onChange={(e) => setField(e.target.value)}
                 value={field}
               >
-                <option value="Programming and development">
+                <option value="Programming_and_development">
                   Programming and development
                 </option>
                 <option value="Electronics">Electronics</option>

@@ -67,14 +67,14 @@ const Login = () => {
             <Heading size={{ base: "xs", md: "sm" }}>
               Log in to your account
             </Heading>
-            {/* <HStack spacing="1" justify="center">
+            <HStack spacing="1" justify="center">
               <Text color="fg.muted">Don't have an account?</Text>
-              <Link to="/SignUp">
+              <Link to="/Register">
                 <Button variant="text" size="lg">
                   Sign up
                 </Button>
               </Link>
-            </HStack> */}
+            </HStack>
           </Stack>
         </Stack>
         <Box
