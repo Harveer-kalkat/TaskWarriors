@@ -45,7 +45,7 @@ const CreateListings = () => {
     formData.append("description", description);
 
     const response = await fetch(
-      "http://localhost:4000/api/listing/CreateListings",
+      "https://taskwarriors-backend.onrender.com/api/listing/CreateListings",
       {
         method: "POST",
         body: formData,

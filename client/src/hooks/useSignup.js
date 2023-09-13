@@ -13,10 +13,13 @@ export const useSignup = () => {
       console.log(pair[0] + ", " + pair[1]);
     }
 
-    const response = await fetch("http://localhost:4000/api/user/SignUp", {
-      method: "POST",
-      body: formData,
-    }).catch((error) => {
+    const response = await fetch(
+      "https://taskwarriors-backend.onrender.com/api/user/SignUp",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).catch((error) => {
       console.error("Error: ", error);
     });
 
