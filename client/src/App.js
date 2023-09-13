@@ -8,7 +8,6 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import Login from "./components/auth/Login";
 import Services from "./pages/Services";
-import Warriors from "./pages/Warriors";
 import SignUp from "./components/auth/SignUp";
 import ServiceDetails from "./pages/ServiceDetails";
 import WarriorSelection from "./pages/WarriorSelection";
