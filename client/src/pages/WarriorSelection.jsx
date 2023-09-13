@@ -10,7 +10,7 @@ const WarriorSelection = () => {
   useEffect(() => {
     async function getRecords() {
       const response = await fetch(
-        `http://localhost:4000/api/listing/WarriorSelection/${id}`
+        `https://taskwarriors-backend.onrender.com/api/listing/WarriorSelection/${id}`
       );
 
       if (!response.ok) {

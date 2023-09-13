@@ -11,7 +11,7 @@ const Dashboard = () => {
   useEffect(() => {
     async function getUser() {
       const response = await fetch(
-        `http://localhost:4000/api/user/Dashboard/${id}`
+        `https://taskwarriors-backend.onrender.com/api/user/Dashboard/${id}`
       );
 
       if (!response.ok) {
