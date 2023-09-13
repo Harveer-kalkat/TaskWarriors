@@ -19,5 +19,8 @@ services according to their courses or skills.
 ## 4.	Listings created by the users.
 ![image](https://github.com/Harveer-kalkat/TaskWarriors/assets/69712177/36b75282-d205-48d5-b8a9-5bb446fe54b4)
 
+## 5. Chat page
+![image](https://github.com/Harveer-kalkat/TaskWarriors/assets/69712177/eff9426f-3f9e-44ca-8805-1d7119cf12ba)
+
 
 
