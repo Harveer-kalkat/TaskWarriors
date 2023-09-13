@@ -4,7 +4,6 @@ import {
   Center,
   Stack,
   Button,
-  Badge,
   useColorModeValue,
   Box,
   SimpleGrid,
@@ -16,7 +15,6 @@ import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 
 const HomeCards = () => {
-  const [rating, setRating] = useState(0);
   const services = [
     {
       name: "Programming and Development",

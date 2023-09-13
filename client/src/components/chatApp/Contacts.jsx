@@ -4,7 +4,6 @@ import Logo from "../../assets/logo.svg";
 
 export default function Contacts({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
-  const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("user"));
