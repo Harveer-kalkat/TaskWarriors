@@ -1,0 +1,24 @@
+{
+  "name": "taskwarriors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "start-server": "cd server && npm run dev",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "start-client": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harveer-kalkat/TaskWarriors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harveer-kalkat/TaskWarriors/issues"
+  },
+  "homepage": "https://github.com/Harveer-kalkat/TaskWarriors#readme"
+}
